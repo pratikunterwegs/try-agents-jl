@@ -1,11 +1,17 @@
 
 using Random
 using Distributions
+using NearestNeighbors
 
 mutable struct agent
     id::Int16
     pos::NTuple{2, Float64} # where the agent is
     sA::Float64 # agent preference for other agents
+end
+
+mutable struct resources
+    n_food::Int64
+    pos::Array{NTuple{2, Float64}, n_food}
 end
 
 # a cauchy distribution for sampling movement distances
